@@ -1,0 +1,9 @@
+main: com.burp.bwp.Bwp
+name: Bwp
+version: 0.1
+author: burp
+commands:
+  ResetInv:
+    description: resets your inventory
+    usage: /ResetInv
+    aliases: [resetinv, ri, rv]
