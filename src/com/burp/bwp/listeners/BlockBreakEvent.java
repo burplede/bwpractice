@@ -1,5 +1,7 @@
 package com.burp.bwp.listeners;
 
+import com.burp.bwp.Bwp;
+import net.minecraft.server.v1_8_R3.BlockPosition;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -15,9 +17,13 @@ public class BlockBreakEvent implements Listener {
         Player p = e.getPlayer();
         Block block = e.getBlock();
         if (p.getGameMode() != GameMode.CREATIVE) {
-            if (block.getType() == Material.WOOL) {
-                e.setCancelled(false);
-            } else {e.setCancelled(true);}
+            if (block.getType() != Material.WOOL) {
+                e.setCancelled(true);
+            }
+            else {
+                e.getBlock().setType(Material.AIR);
+                Bwp.Diff.remove(new BlockPosition(block.getX(), block.getY(), block.getZ()));
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ package com.burp.bwp.listeners;
 import cubing.bukkit.ItemUtils;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,12 +33,12 @@ public class PlayerYAxisListener implements Listener {
             ItemStack stack3 = ItemUtils.item(Material.IRON_LEGGINGS, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.PROTECTION_ENVIRONMENTAL}, new int[]{1}, null);
             ItemStack stack4 = ItemUtils.item(Material.IRON_BOOTS, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.PROTECTION_ENVIRONMENTAL}, new int[]{1}, null);
             ItemStack kb1 = ItemUtils.item(Material.STICK, "§6Knockback Stick", 1, -1, true, true, null, new Enchantment[] {Enchantment.KNOCKBACK}, new int[]{1}, null);
-            ItemStack kb2 = ItemUtils.item(Material.STICK, "§6Knockback 2 Stick", 1, -1, true, true, null, new Enchantment[] {Enchantment.KNOCKBACK}, new int[]{2}, null);
             ItemStack axe = ItemUtils.item(Material.WOOD_AXE, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.DIG_SPEED}, new int[]{1}, null);
             ItemStack pick = ItemUtils.item(Material.WOOD_PICKAXE, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.DIG_SPEED}, new int[]{1}, null);
             ItemStack shears = ItemUtils.item(Material.SHEARS, null, 1, -1, false, true, null, null, null, null);
             ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, -1, false, false, null, null, null, null);
             ItemStack sword = ItemUtils.item(Material.WOOD_SWORD, null, 1, -1, false, true, null, null, null, null);
+            ItemStack dye = ItemUtils.item(Material.RED_ROSE, null, 1, -1, false, true, null, null, null, null);
 
             inv.setHelmet(stack1);
             inv.setChestplate(stack2);
@@ -49,7 +50,8 @@ public class PlayerYAxisListener implements Listener {
             p.getInventory().addItem(pick);
             p.getInventory().addItem(shears);
             p.getInventory().addItem(kb1);
-            p.getInventory().addItem(kb2);
+            p.getInventory().addItem(new ItemStack(Material.NETHER_STAR));
+            p.getInventory().addItem(dye);
         }
     }
 

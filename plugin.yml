@@ -7,3 +7,12 @@ commands:
     description: resets your inventory
     usage: /ResetInv
     aliases: [resetinv, ri, rv]
+
+  Reset:
+    description: resets blocks
+    usage: /Reset
+    aliases: [r, rb, resetblocks]
+  menu:
+    description: Opens clutch menu
+    usage: /menu
+    aliases: [navigator, clutcher, clutch]
