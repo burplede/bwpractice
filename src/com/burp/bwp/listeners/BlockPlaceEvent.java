@@ -29,14 +29,16 @@ public class BlockPlaceEvent implements Listener {
         Player p = e.getPlayer();
       if (p.getGameMode() != GameMode.CREATIVE) {
             Block block = e.getBlock();
-            Bwp.Diff.put(new BlockPosition(block.getX(),block.getY(),block.getZ()), 0);
-            Bwp.id++;
-            if (p.getItemInHand().getAmount() < 64) {
-                Material m = p.getInventory().getItemInHand().getType();
-                ItemStack material = ItemUtils.item(m, null, 1, -1, false, false, null, null, null, null);
-                p.getInventory().addItem(material);
+            if (block.getType() == Material.RED_ROSE) {e.setCancelled(true);}
+            else {
+                Bwp.Diff.put(new BlockPosition(block.getX(), block.getY(), block.getZ()), 0);
+                Bwp.id++;
+                if (p.getItemInHand().getAmount() < 64) {
+                    Material m = p.getInventory().getItemInHand().getType();
+                    ItemStack material = ItemUtils.item(m, null, 1, -1, false, false, null, null, null, null);
+                    p.getInventory().addItem(material);
+                }
             }
-
         }
     }
     @EventHandler

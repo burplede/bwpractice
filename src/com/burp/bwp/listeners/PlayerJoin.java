@@ -32,6 +32,9 @@ public class PlayerJoin implements Listener {
         ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, -1, false, false, null, null, null, null);
         ItemStack sword = ItemUtils.item(Material.WOOD_SWORD, null, 1, -1, false, true, null, null, null, null);
         ItemStack dye = ItemUtils.item(Material.RED_ROSE, null, 1, -1, false, true, null, null, null, null);
+        ItemStack menu = new ItemStack(Material.NETHER_STAR);
+        ItemMeta menua = menu.getItemMeta();
+        menua.setDisplayName("Clutch Modes");
 
         inv.setHelmet(stack1);
         inv.setChestplate(stack2);
@@ -43,7 +46,7 @@ public class PlayerJoin implements Listener {
         p.getInventory().addItem(pick);
         p.getInventory().addItem(shears);
         p.getInventory().addItem(kb1);
-        p.getInventory().addItem(new ItemStack(Material.NETHER_STAR));
+        p.getInventory().addItem(menu);
         p.getInventory().addItem(dye);
     }
 }

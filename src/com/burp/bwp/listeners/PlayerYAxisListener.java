@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -39,6 +40,9 @@ public class PlayerYAxisListener implements Listener {
             ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, -1, false, false, null, null, null, null);
             ItemStack sword = ItemUtils.item(Material.WOOD_SWORD, null, 1, -1, false, true, null, null, null, null);
             ItemStack dye = ItemUtils.item(Material.RED_ROSE, null, 1, -1, false, true, null, null, null, null);
+            ItemStack menu = new ItemStack(Material.NETHER_STAR);
+            ItemMeta menua = menu.getItemMeta();
+            menua.setDisplayName("Clutch Modes");
 
             inv.setHelmet(stack1);
             inv.setChestplate(stack2);
@@ -50,7 +54,7 @@ public class PlayerYAxisListener implements Listener {
             p.getInventory().addItem(pick);
             p.getInventory().addItem(shears);
             p.getInventory().addItem(kb1);
-            p.getInventory().addItem(new ItemStack(Material.NETHER_STAR));
+            p.getInventory().addItem(menu);
             p.getInventory().addItem(dye);
         }
     }

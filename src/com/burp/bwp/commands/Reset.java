@@ -23,7 +23,7 @@ public class Reset implements CommandExecutor, Listener {
             locations.add(e.getBlock().getLocation());
         }
     }
-
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             World w = Bukkit.getWorld("world");

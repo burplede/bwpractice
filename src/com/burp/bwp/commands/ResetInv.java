@@ -9,8 +9,10 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class ResetInv implements CommandExecutor {
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
             Player p = (Player)sender;
@@ -27,6 +29,10 @@ public class ResetInv implements CommandExecutor {
             ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, -1, false, false, null, null, null, null);
             ItemStack sword = ItemUtils.item(Material.WOOD_SWORD, null, 1, -1, false, true, null, null, null, null);
             ItemStack dye = ItemUtils.item(Material.RED_ROSE, null, 1, -1, false, true, null, null, null, null);
+            ItemStack menu = new ItemStack(Material.NETHER_STAR);
+            ItemMeta menua = menu.getItemMeta();
+            menua.setDisplayName("Clutch Modes");
+
             inv.setHelmet(stack1);
             inv.setChestplate(stack2);
             inv.setLeggings(stack3);
@@ -37,7 +43,7 @@ public class ResetInv implements CommandExecutor {
             p.getInventory().addItem(pick);
             p.getInventory().addItem(shears);
             p.getInventory().addItem(kb1);
-            p.getInventory().addItem(new ItemStack(Material.NETHER_STAR));
+            p.getInventory().addItem(menu);
             p.getInventory().addItem(dye);
         }
         return true;
