@@ -1,6 +1,7 @@
 package com.burp.bwp.commands;
 
 import cubing.bukkit.ItemUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,12 +27,13 @@ public class ResetInv implements CommandExecutor {
             ItemStack axe = ItemUtils.item(Material.WOOD_AXE, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.DIG_SPEED}, new int[]{1}, null);
             ItemStack pick = ItemUtils.item(Material.WOOD_PICKAXE, null, 1, -1, true, true, null, new Enchantment[] {Enchantment.DIG_SPEED}, new int[]{1}, null);
             ItemStack shears = ItemUtils.item(Material.SHEARS, null, 1, -1, false, true, null, null, null, null);
-            ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, -1, false, false, null, null, null, null);
+            ItemStack wool = ItemUtils.item(Material.WOOL, null, 128, 11, false, false, null, null, null, null);
             ItemStack sword = ItemUtils.item(Material.WOOD_SWORD, null, 1, -1, false, true, null, null, null, null);
-            ItemStack dye = ItemUtils.item(Material.RED_ROSE, null, 1, -1, false, true, null, null, null, null);
-            ItemStack menu = new ItemStack(Material.NETHER_STAR);
-            ItemMeta menua = menu.getItemMeta();
-            menua.setDisplayName("Clutch Modes");
+            
+            ItemStack item = new ItemStack(Material.REDSTONE_COMPARATOR, 1);
+            ItemMeta itemMeta = item.getItemMeta();
+            itemMeta.setDisplayName(ChatColor.GREEN + "Clutch Menu");
+            item.setItemMeta(itemMeta);
 
             inv.setHelmet(stack1);
             inv.setChestplate(stack2);
@@ -43,8 +45,8 @@ public class ResetInv implements CommandExecutor {
             p.getInventory().addItem(pick);
             p.getInventory().addItem(shears);
             p.getInventory().addItem(kb1);
-            p.getInventory().addItem(menu);
-            p.getInventory().addItem(dye);
+            p.getInventory().addItem(item);
+            
         }
         return true;
     }

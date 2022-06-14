@@ -1,9 +1,8 @@
 package com.burp.bwp.listeners;
 
-import com.burp.bwp.Bwp;
+import com.burp.bwp.Main;
 import net.minecraft.server.v1_8_R3.BlockPosition;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -22,7 +21,7 @@ public class BlockBreakEvent implements Listener {
             }
             else {
                 e.getBlock().setType(Material.AIR);
-                Bwp.Diff.remove(new BlockPosition(block.getX(), block.getY(), block.getZ()));
+                Main.Diff.remove(new BlockPosition(block.getX(), block.getY(), block.getZ()));
             }
         }
     }

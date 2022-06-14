@@ -11,5 +11,7 @@ public class FallDamageListener implements Listener {
         if (e.getCause() == EntityDamageEvent.DamageCause.FALL) {
             e.setCancelled(true);
         }
+        // e.setDamage(0);
+        e.setCancelled(true);
     }
 }

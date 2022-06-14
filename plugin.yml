@@ -1,5 +1,5 @@
-main: com.burp.bwp.Bwp
-name: Bwp
+main: com.burp.bwp.Main
+name: BedClutchFFA
 version: 0.1
 author: burp
 commands:
@@ -12,7 +12,3 @@ commands:
     description: resets blocks
     usage: /Reset
     aliases: [r, rb, resetblocks]
-  menu:
-    description: Opens clutch menu
-    usage: /menu
-    aliases: [navigator, clutcher, clutch]
